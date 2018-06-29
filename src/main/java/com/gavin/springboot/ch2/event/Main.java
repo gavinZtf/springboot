@@ -13,7 +13,8 @@ public class Main {
         AnnotationConfigApplicationContext context 
             = new AnnotationConfigApplicationContext(EventConfig.class);
        
-        
+        DemoPublisher pulisher = context.getBean(DemoPublisher.class);
+        pulisher.publish("hello application event");
         
         context.close();
     }
